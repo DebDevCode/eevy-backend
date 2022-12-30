@@ -364,7 +364,7 @@ router.delete("/deleteBorne", async (req, res) => {
     } else {
       const chargerDeleted = await Charger.findByIdAndDelete(chargerId);
 
-      res.json({ result: true, chargerDeleted });
+      res.json({ result: true, chargerDeleted: chargerDeleted });
     }
   }
 });
