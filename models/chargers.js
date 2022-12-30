@@ -12,7 +12,7 @@ const locationSchema = mongoose.Schema({
 const chargerSchema = mongoose.Schema({
   // charger characteristics
   brand: String,
-  power: Number,
+  power: String,
   plugType: String,
   // charger address as sub document
   location: locationSchema,
