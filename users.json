@@ -1,0 +1,41 @@
+[
+  {
+    "email": "johndoe@gmail.com",
+    "password": "mypassword1",
+    "firstName": "John",
+    "lastName": "Doe",
+    "charger": "5f1c1234567890abcdef1234",
+    "reservations": "5f1c1234567890abcdef1235",
+    "balance": 100,
+    "rate": 0.1,
+    "favorites": "5f1c1234567890abcdef1236",
+    "recentPlaces": ["San Francisco", "Los Angeles", "New York City"],
+    "token": "1234abcdef567890"
+  },
+  {
+    "email": "janedoe@gmail.com",
+    "password": "mypassword2",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "charger": "5f1c1234567890abcdef1237",
+    "reservations": "5f1c1234567890abcdef1238",
+    "balance": 200,
+    "rate": 0.15,
+    "favorites": "5f1c1234567890abcdef1239",
+    "recentPlaces": ["Boston", "Chicago", "Miami"],
+    "token": "1234abcdef567891"
+  },
+  {
+    "email": "robertjones@gmail.com",
+    "password": "mypassword3",
+    "firstName": "Robert",
+    "lastName": "Jones",
+    "charger": "5f1c1234567890abcdef1240",
+    "reservations": "5f1c1234567890abcdef1241",
+    "balance": 300,
+    "rate": 0.2,
+    "favorites": "5f1c1234567890abcdef1242",
+    "recentPlaces": ["Paris", "Chicago", "Lyon"],
+    "token": "1234abcdef567371"
+  }
+]
