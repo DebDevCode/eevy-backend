@@ -46,16 +46,7 @@ router.post("/signup", async (req, res) => {
     res.json({ result: false, error: "Missing or empty fields" });
     return;
   }
-  const {
-    email,
-    password,
-    firstName,
-    lastName,
-    tel,
-    IBAN,
-    BIC,
-    accountHolder,
-  } = req.body;
+  const { email, password, firstName, lastName, tel, iban, bicCode } = req.body;
   try {
     // check if a user withsame email already exists in db
     const data = await User.findOne({ email });
@@ -83,9 +74,8 @@ router.post("/signup", async (req, res) => {
       comments: [],
       // account
       RIB: {
-        IBAN,
-        BIC,
-        accountHolder,
+        iban,
+        bicCode,
       }, // bank details for money transfers
       account: account ? account._id : null, // the EEVY account of the user
       recentPlaces: [],

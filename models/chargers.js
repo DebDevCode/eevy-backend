@@ -10,16 +10,13 @@ const locationSchema = mongoose.Schema({
 });
 
 const chargerSchema = mongoose.Schema({
-  // charger characteristics
   brand: String,
   power: String,
   plugType: String,
-  // charger address as sub document
   location: locationSchema,
-  // price per hour
   pricePerHour: Number,
   rating: Number,
-  available: Boolean, // switched off (false) when charger shall not show in new search requests
+  available: Boolean,
 });
 
 const Charger = mongoose.model("chargers", chargerSchema);

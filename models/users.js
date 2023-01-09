@@ -1,9 +1,22 @@
 const mongoose = require("mongoose");
+
 const ribSchema = mongoose.Schema({
-  IBAN: String,
-  BIC: String,
-  accountHolder: String,
+  iban: String,
+  bicCode: String,
 });
+
+const accountSchema = mongoose.Schema({
+  balance: Number,
+  movements: [accountMovementSchema],
+});
+
+const accountMovementSchema = mongoose.Schema({
+  date: Date, // format to be defined: in principle the calendar date is sufficient
+  amount: Number, // in euros
+  isPositive: Boolean, // if true : credit , debit otherwise
+  description: String, // text explaining whether it's a transfer or a reservation paiement
+});
+
 const commentSchema = mongoose.Schema({
   rating: Number,
   date: Date,
@@ -13,7 +26,6 @@ const commentSchema = mongoose.Schema({
 });
 
 const userSchema = mongoose.Schema({
-  // identity of user
   lastName: String,
   firstName: String,
   password: String,
@@ -21,20 +33,12 @@ const userSchema = mongoose.Schema({
   email: String,
   tel: String,
   profilPic: String,
-  // user's car info
-  // carModel: String,
-  // batteryCapacity: Number,
-  // ratings
-  rating: Number, // average of  all ratings
+  rating: Number,
   comments: [commentSchema],
-  // account
-  RIB: ribSchema, // bank details for money transfers
-  account: { type: mongoose.Schema.Types.ObjectId, ref: "accounts" }, // the EEVY account of teh user
-  // recent search :  cities
+  RIB: ribSchema,
+  account: accountSchema,
   recentPlaces: [String],
-  // favorite chargers
   favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "chargers" }],
-  // the following field is for charger owners: array because a user can have several chargers
   chargers: [{ type: mongoose.Schema.Types.ObjectId, ref: "chargers" }],
 });
 
